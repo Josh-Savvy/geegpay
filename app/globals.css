@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	font-family: "DM Sans";
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+body {
+	background: #fafafa;
+}
