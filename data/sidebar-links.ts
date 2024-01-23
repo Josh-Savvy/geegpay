@@ -1,6 +1,6 @@
 import * as DashboardIcons from "@/components/ui/atoms/icons/DashboardIcons";
 
-export type TabType = { label: string; link: string; icon: keyof typeof DashboardIcons };
+export type TabType = { label: string; link: string; icon: keyof typeof DashboardIcons; iconProps?: {} };
 
 const sidebarTabs: TabType[] = [
 	{
@@ -9,27 +9,27 @@ const sidebarTabs: TabType[] = [
 		link: "",
 	},
 	{
-		icon: "MenuIcon",
+		icon: "TrendIcon",
 		label: "Menu",
 		link: "",
 	},
 	{
-		icon: "MenuIcon",
+		icon: "UsersIcon",
 		label: "Menu",
 		link: "",
 	},
 	{
-		icon: "MenuIcon",
+		icon: "BoxIcon",
 		label: "Menu",
 		link: "",
 	},
 	{
-		icon: "MenuIcon",
+		icon: "DiscountIcon",
 		label: "Menu",
 		link: "",
 	},
 	{
-		icon: "MenuIcon",
+		icon: "InfoIcon",
 		label: "Menu",
 		link: "",
 	},
