@@ -26,8 +26,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 		if (savedTheme) {
 			toggleTheme(savedTheme as ITheme);
 		} else {
-			const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-			toggleTheme(prefersDarkMode ? "dark" : "light");
+			// const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+			// toggleTheme(prefersDarkMode ? "dark" : "light");
+			toggleTheme("light");
 		}
 
 		window.addEventListener("storage", (e) => {

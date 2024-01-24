@@ -3,15 +3,20 @@ import Navbar from "./navbar";
 import DashboardLayout from "./DashboardLayout";
 import { ThemeProvider } from "@/context/theme.context";
 import { SidebarProvider } from "@/context/sidebar.context";
+import { NotificationsPanelProvider } from "@/context/notifications-panel.context";
+import NotificationsPanel from "./NotificationsPanel";
 
 const LayoutContainer = ({ children }: { children: ReactNode }) => {
 	return (
 		<ThemeProvider>
 			<SidebarProvider>
-				<DashboardLayout>
-					<Navbar />
-					<section className="px-3">{children}</section>
-				</DashboardLayout>
+				<NotificationsPanelProvider>
+					<NotificationsPanel />
+					<DashboardLayout>
+						<Navbar />
+						<section className="px-3">{children}</section>
+					</DashboardLayout>
+				</NotificationsPanelProvider>
 			</SidebarProvider>
 		</ThemeProvider>
 	);

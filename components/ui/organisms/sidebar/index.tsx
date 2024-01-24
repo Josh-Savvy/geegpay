@@ -12,7 +12,7 @@ const Sidebar = () => {
 	return (
 		<aside
 			className={classNames(
-				"overflow-hidden xs:overflow-visible duration-300 bg-[#F7F8FA] dark:bg-secondary fixed h-screen xs:sticky top-0 left-0 flex flex-col xs:items-center z-50 py-5",
+				"overflow-hidden xs:overflow-visible duration-300 bg-[#F7F8FA] dark:bg-secondary fixed h-screen xs:sticky top-0 left-0 flex flex-col xs:items-center z-40 py-5",
 				isOpen ? "w-full pl-10 xs:w-full xs:max-w-20 xs:pl-0" : "w-0 xs:w-full xs:max-w-20 pl-0 xs:pl-0",
 			)}>
 			<div className="flex items-center gap-3 relative">

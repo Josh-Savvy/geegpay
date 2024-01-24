@@ -13,7 +13,6 @@ const LatestOrders = () => {
 				<h1 className="dark:text-white text-lg duration-300">Latest Orders</h1>
 				<p className="text-[#34CAA5] hover:underline select-none cursor-pointer">See all</p>
 			</div>
-
 			<TableHead />
 			<div className="grid items-center mt-3">
 				{latestOrders.map((order, id) => {
@@ -66,7 +65,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 				{order.status}
 			</div>
 			<div className="xs:flex hidden col-span-2 gap-2 items-center dark:text-white hover:underline cursor-pointer">
-				<DocumentIcon />
+				<DocumentIcon size={18} />
 				<p className="text-[#0D062D] dark:text-white">View</p>
 			</div>
 		</div>
