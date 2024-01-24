@@ -17,7 +17,9 @@ const Navbar = () => {
 				<div className="lg:inline-block hidden">
 					<SearchBar
 						type="search"
-						containerProps={{ className: "dark:text-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50" }}
+						containerProps={{
+							className: "dark:text-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50",
+						}}
 					/>
 				</div>
 				{/* Calendar */}

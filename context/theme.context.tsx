@@ -16,8 +16,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	const toggleTheme = (theme?: ITheme) => {
 		const bodyTagName = document.getElementsByTagName("html")[0];
 		const newTheme = theme || (currentTheme === "light" ? "dark" : "light");
-		bodyTagName.setAttribute("class", String(theme));
-		document.documentElement.setAttribute("theme", newTheme);
+		bodyTagName.setAttribute("class", String(newTheme));
 		setCurrentTheme(newTheme);
 		localStorage.setItem("theme", newTheme);
 	};

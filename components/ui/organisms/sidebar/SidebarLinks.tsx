@@ -45,9 +45,14 @@ const TabItem = ({ activeTab, setActiveTab, tab }: TabItemProps) => {
 					color={is_active ? (currentTheme === "dark" ? "#fff" : "#0D062D") : "#B2ABAB"}
 				/>
 			)}
-			{is_active && (
-				<div className="absolute p-[3px] xs:p-[2px] rounded-tl-lg rounded-bl-lg h-full right-0 bg-tertiary dark:bg-white" />
-			)}
+			{/* {is_active && ( */}
+			<div
+				className={classNames(
+					"absolute rounded-tl-lg rounded-bl-lg right-0 bg-tertiary dark:bg-white duration-300",
+					is_active ? "h-full translate-y-0 p-[3px] xs:p-[2px]" : "h-0 translate-y-10",
+				)}
+			/>
+			{/* )} */}
 			<p
 				className={classNames(
 					"xs:hidden text-sm whitespace-nowrap duration-300",
