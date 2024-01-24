@@ -8,12 +8,11 @@ type DashboardLayoutProps = {
 };
 
 const DashboardLayout = ({ children, className }: DashboardLayoutProps) => {
-	const defaultClasses = "flex relative";
+	const defaultClasses = "flex";
 	return (
 		<main className={classNames(defaultClasses, className)}>
-			{/* Sidebar */}
 			<Sidebar />
-			<div className="flex-grow px-5 min-h-screen">
+			<div className="flex-grow min-h-screen">
 				{React.Children.map(children, (child) => {
 					if (React.isValidElement(child)) {
 						return React.cloneElement<any>(child, {});

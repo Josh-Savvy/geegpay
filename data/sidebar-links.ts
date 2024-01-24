@@ -10,27 +10,27 @@ const sidebarTabs: TabType[] = [
 	},
 	{
 		icon: "TrendIcon",
-		label: "Menu",
+		label: "Analytics",
 		link: "",
 	},
 	{
 		icon: "UsersIcon",
-		label: "Menu",
+		label: "Users Management",
 		link: "",
 	},
 	{
 		icon: "BoxIcon",
-		label: "Menu",
+		label: "Donations",
 		link: "",
 	},
 	{
 		icon: "DiscountIcon",
-		label: "Menu",
+		label: "Discounts",
 		link: "",
 	},
 	{
 		icon: "InfoIcon",
-		label: "Menu",
+		label: "Info",
 		link: "",
 	},
 ];
