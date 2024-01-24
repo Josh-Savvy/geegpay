@@ -7,7 +7,7 @@ import Hamburger from "./Hamburger";
 
 const Navbar = () => {
 	return (
-		<nav className="duration-300 flex justify-between items-center p-3 pt-5 border-b border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-gray-900 bg-[#fafafa] z-40">
+		<nav className="duration-300 flex justify-between items-center p-3 pt-5 border-b border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-gray-800 bg-[#fafafa] z-40">
 			<div className="text-[#26282C] text-lg font-medium dark:text-white flex items-center gap-3">
 				<Hamburger />
 				<p className="cursor-pointer">Dashboard</p>

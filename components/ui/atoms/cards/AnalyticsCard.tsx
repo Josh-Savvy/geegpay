@@ -15,7 +15,7 @@ const AnalyticsCards = ({ icon, name, percentage, value, is_money }: AnalyticsCa
 	const IconComp = icon && AnalyticsIcons[icon];
 	const percentageThreshold = percentage > 40;
 	return (
-		<div className="flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
+		<div className="flex flex-col justify-around gap-2 w-full rounded-xl bg-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50 border border-[#EDF2F7] md:p-3 p-5 lg:p-5 xl:p-3 duration-300">
 			<div className="flex justify-between items-center">
 				<div className="rounded-full border border-[#E6E6E6] dark:border-[#B2ABAB] dark:border-opacity-50 w-10 h-10 flex justify-center items-center">
 					<IconComp />
@@ -23,7 +23,9 @@ const AnalyticsCards = ({ icon, name, percentage, value, is_money }: AnalyticsCa
 				<div className="">Chart</div>
 			</div>
 			<h1 className="text-[#898989] capitalize dark:text-white duration-300">{name}</h1>
-			<p className="sm:text-xl text-lg dark:text-white">{is_money ? "$" + value.toLocaleString() : value}</p>
+			<p className="sm:text-xl text-lg dark:text-white">
+				{is_money ? "$" + value.toLocaleString() : value.toLocaleString()}
+			</p>
 			{/* Todo: implemented dynamic percentage system */}
 			<span className="flex items-center text-sm gap-1.5 w-full">
 				<span

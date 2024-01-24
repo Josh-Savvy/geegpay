@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project is built using Next.js, TypeScript, and Tailwind CSS. Additionally, it includes a Dark Mode feature for enhanced user experience.
+This project is built using Next.js, TypeScript, and Tailwind CSS.
+I minimized the use of 3rd party libraries, to ensure faster bundling and loading time, and an optimzed UX. It also includes a Dark Mode feature for enhanced user experience.
 
 ## Features
 
