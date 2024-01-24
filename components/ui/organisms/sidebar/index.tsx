@@ -17,19 +17,43 @@ const Sidebar = () => {
 			)}>
 			<div className="flex items-center gap-3 relative">
 				<AppLogo />
-				<h1 className="xs:hidden text-[#26282C] text-lg font-medium">Dashboard</h1>
+				<h1 className="xs:hidden text-[#26282C] text-lg font-medium dark:text-white">Dashboard</h1>
 				<div
 					onClick={() => toggle("close")}
-					className="xs:hidden absolute text-4xl right-10 cursor-pointer text-black">
+					className="xs:hidden absolute text-4xl right-10 cursor-pointer text-black dark:text-white">
 					&times;
 				</div>
 			</div>
 			<SidebarLinks />
 			<ThemeToggle />
-			<div className="flex justify-center flex-col gap-5 items-center absolute bottom-5">
-				<CircledArrowRight className="cursor-pointer" />
-				<GearIcon className="cursor-pointer" />
-				<LogOutIcon className="cursor-pointer" />
+			<div className="flex justify-center flex-col gap-8 xs:gap-5 xs:items-center absolute bottom-5">
+				<div className="flex gap-5 cursor-pointer group">
+					<CircledArrowRight className="cursor-pointer" />
+					<p
+						className={classNames(
+							"xs:hidden text-sm whitespace-nowrap duration-300 group-hover:dark:text-white dark:text-[#B2ABAB]",
+						)}>
+						Nav-Item
+					</p>
+				</div>
+				<div className="flex gap-5 cursor-pointer group">
+					<GearIcon className="cursor-pointer" />
+					<p
+						className={classNames(
+							"xs:hidden text-sm whitespace-nowrap duration-300 group-hover:dark:text-white dark:text-[#B2ABAB]",
+						)}>
+						Settings
+					</p>
+				</div>
+				<div className="flex gap-5 cursor-pointer group">
+					<LogOutIcon className="cursor-pointer" />
+					<p
+						className={classNames(
+							"xs:hidden text-sm whitespace-nowrap duration-300 group-hover:dark:text-white dark:text-[#B2ABAB]",
+						)}>
+						Logout
+					</p>
+				</div>
 			</div>
 		</aside>
 	);

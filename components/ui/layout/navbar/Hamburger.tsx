@@ -11,7 +11,7 @@ const Hamburger = () => {
 			onClick={() => {
 				toggle();
 			}}
-			className="xs:hidden">
+			className="xs:hidden cursor-pointer">
 			Hamburger
 		</div>
 	);

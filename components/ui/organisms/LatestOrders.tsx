@@ -61,7 +61,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 	return (
 		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] cursor-default hover:bg-slate-50 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
-				<div className="w-8 h-8 overflow-hidden rounded-full bg-zinc-200">
+				<div className="w-8 h-8 overflow-hidden rounded-full flex justify-center items-center">
 					<Image
 						src={String(order.user.avatar)}
 						alt="user"
@@ -69,9 +69,10 @@ const TableItem = ({ order }: { order: IOrder }) => {
 						width={100}
 						loading="lazy"
 						unoptimized
+						className="bg-zinc-200 rounded-full"
 					/>
 				</div>
-				<p className="flex items-center gap-1">
+				<p className="flex text-xs xs:text-[15px] items-center gap-1">
 					{order.user.name.split(" ")[0]}
 					<span className="xl:block lg:hidden md:block hidden">{order.user.name.split(" ")[1]}</span>
 				</p>
@@ -100,7 +101,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 
 const TableHead = () => {
 	return (
-		<div className="grid grid-cols-12 xl:grid-cols-11 gap-2">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-2 text-sm xs:text-[15px] text-[#9CA4AB] font-[300]">
 			<div className="col-span-3">Name</div>
 			<div className="col-span-3 xs:col-span-2 md:col-span-3 xl:col-span-2">Date</div>
 			<div className="col-span-3 xs:col-span-2">Amount</div>

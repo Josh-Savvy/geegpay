@@ -8,10 +8,10 @@ import Hamburger from "./Hamburger";
 const Navbar = () => {
 	return (
 		<nav className="duration-300 flex justify-between items-center p-3 pt-5 border-b-2 border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-secondary/60 bg-[#fafafa] backdrop-blur-md z-40">
-			<h1 className="text-[#26282C] text-lg font-medium dark:text-white flex items-center gap-3">
+			<div className="text-[#26282C] text-lg font-medium dark:text-white flex items-center gap-3">
 				<Hamburger />
-				Dashboard
-			</h1>
+				<p className="cursor-pointer">Dashboard</p>
+			</div>
 			<div className="flex items-center gap-4 ">
 				{/* Search */}
 				<div className="lg:inline-block hidden">
