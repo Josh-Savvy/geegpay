@@ -14,9 +14,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	const [currentTheme, setCurrentTheme] = useState<ITheme>("light");
 
 	const toggleTheme = (theme?: ITheme) => {
+		const bodyTagName = document.getElementsByTagName("html")[0];
 		const newTheme = theme || (currentTheme === "light" ? "dark" : "light");
-		document.documentElement.setAttribute("data-theme", newTheme);
+		bodyTagName.setAttribute("class", String(theme));
+		document.documentElement.setAttribute("theme", newTheme);
 		setCurrentTheme(newTheme);
+		localStorage.setItem("theme", newTheme);
 	};
 
 	useEffect(() => {

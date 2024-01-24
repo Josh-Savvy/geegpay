@@ -1,6 +1,6 @@
 import React, { Fragment, ReactNode } from "react";
 import Navbar from "./navbar";
-import DashboardLayout from "../organisms/DashboardLayout";
+import DashboardLayout from "./DashboardLayout";
 import { ThemeProvider } from "@/context/theme.context";
 
 const LayoutContainer = ({ children }: { children: ReactNode }) => {
@@ -8,7 +8,7 @@ const LayoutContainer = ({ children }: { children: ReactNode }) => {
 		<ThemeProvider>
 			<DashboardLayout>
 				<Navbar />
-				<section className="">{children}</section>
+				<section className="px-3">{children}</section>
 			</DashboardLayout>
 		</ThemeProvider>
 	);

@@ -25,7 +25,7 @@ export const AppLogo = ({ size, color, ...rest }: IconProps) => {
 export const Sun = ({ size, color, ...rest }: IconProps) => {
 	return (
 		<svg {...rest} width={size || "18"} height={size || "18"} viewBox="0 0 18 18" fill="none">
-			<g clip-path="url(#clip0_1826_464)">
+			<g clipPath="url(#clip0_1826_464)">
 				<path
 					d="M9 13.2188C11.33 13.2188 13.2188 11.33 13.2188 9C13.2188 6.67005 11.33 4.78125 9 4.78125C6.67005 4.78125 4.78125 6.67005 4.78125 9C4.78125 11.33 6.67005 13.2188 9 13.2188Z"
 					fill={color || "white"}
@@ -298,6 +298,20 @@ export const DocumentIcon = ({ size, color, ...rest }: IconProps) => {
 				d="M14.6663 7.1667H11.9997C9.71967 7.1667 8.83301 6.28003 8.83301 4.00003V1.33337C8.83301 1.13337 8.95301 0.9467 9.13967 0.873366C9.32634 0.793366 9.53967 0.840033 9.68634 0.980033L15.0197 6.31337C15.1597 6.45337 15.2063 6.67337 15.1263 6.86003C15.0463 7.0467 14.8663 7.1667 14.6663 7.1667ZM9.83301 2.54003V4.00003C9.83301 5.72003 10.2797 6.1667 11.9997 6.1667H13.4597L9.83301 2.54003Z"
 				fill={color || "#292D32"}
 			/>
+		</svg>
+	);
+};
+
+export const TrendingMovementIcon = ({ color, size, ...rest }: IconProps) => {
+	return (
+		<svg {...rest} width={size || "12"} height={size || "12"} viewBox="0 0 12 12" fill="none">
+			<path
+				d="M1.5 8.5L4.5 5.5L6.5 7.5L10.5 3.5"
+				stroke={color || "#34CAA5"}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path d="M7 3.5H10.5V7" stroke={color || "#34CAA5"} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	);
 };
