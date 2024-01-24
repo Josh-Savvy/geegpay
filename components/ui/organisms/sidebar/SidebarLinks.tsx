@@ -60,7 +60,7 @@ const TabItem = ({ activeTab, setActiveTab, tab }: TabItemProps) => {
 				)}>
 				{tab.label}
 			</p>
-			<div className="absolute whitespace-nowrap left-16 group-hover:sm:flex hidden border border-tertiary p-2 px-5 text-tertiary bg-white text-sm">
+			<div className="absolute whitespace-nowrap left-16 group-hover:sm:flex hidden border border-tertiary p-1 px-5 text-tertiary bg-white text-sm">
 				{tab.label}
 			</div>
 		</div>
