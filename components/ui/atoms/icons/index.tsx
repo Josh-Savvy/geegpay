@@ -1,4 +1,3 @@
-import { ForwardRefComponent, SVGMotionProps } from "framer-motion";
 import { HtmlHTMLAttributes } from "react";
 
 export interface IconProps extends HtmlHTMLAttributes<SVGElement> {
