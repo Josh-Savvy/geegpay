@@ -57,8 +57,9 @@ const LatestOrders = () => {
 };
 
 const TableItem = ({ order }: { order: IOrder }) => {
+	const date = new Date("11-04-2004");
 	return (
-		<div className="grid grid-cols-12 gap-2 text-sm items-center py-4 border-t border-[#EDF2F6] cursor-default hover:bg-slate-50 duration-300">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] cursor-default hover:bg-slate-50 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
 				<div className="w-8 h-8 overflow-hidden rounded-full bg-zinc-200">
 					<Image
@@ -75,8 +76,13 @@ const TableItem = ({ order }: { order: IOrder }) => {
 					<span className="xl:block lg:hidden md:block hidden">{order.user.name.split(" ")[1]}</span>
 				</p>
 			</div>
-			<div className="col-span-3 text-zinc-300">{formatDate(new Date("11-04-2004"), { shortMonth: true })}</div>
-			<div className="col-span-2 text-[#0D062D]">${order.amount.toLocaleString()}</div>
+			<div className="col-span-3 xl:col-span-2 text-zinc-300 md:inline-grid hidden">
+				{formatDate(date, { shortMonth: true })}
+			</div>
+			<div className="col-span-3 xs:col-span-2 text-zinc-300 md:hidden">
+				{new Date(date).toLocaleDateString().split("/").join("-")}
+			</div>
+			<div className="col-span-3 xs:col-span-2 text-[#0D062D]">${order.amount.toLocaleString()}</div>
 			<div
 				className={classNames(
 					"col-span-2 capitalize",
@@ -84,7 +90,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 				)}>
 				{order.status}
 			</div>
-			<div className="col-span-2 flex gap-2 items-center hover:underline cursor-pointer">
+			<div className="xs:flex hidden col-span-2 gap-2 items-center hover:underline cursor-pointer">
 				<DocumentIcon />
 				<p className="text-[#0D062D]">View</p>
 			</div>
@@ -94,12 +100,12 @@ const TableItem = ({ order }: { order: IOrder }) => {
 
 const TableHead = () => {
 	return (
-		<div className="grid grid-cols-12 gap-2">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-2">
 			<div className="col-span-3">Name</div>
-			<div className="col-span-3">Date</div>
-			<div className="col-span-2">Amount</div>
+			<div className="col-span-3 xs:col-span-2 md:col-span-3 xl:col-span-2">Date</div>
+			<div className="col-span-3 xs:col-span-2">Amount</div>
 			<div className="col-span-2">Status</div>
-			<div className="col-span-2">Invoice</div>
+			<div className="col-span-2 xs:inline-grid hidden">Invoice</div>
 		</div>
 	);
 };

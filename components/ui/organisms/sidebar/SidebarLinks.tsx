@@ -1,12 +1,14 @@
 "use client";
 
 import * as DashboardIcons from "@/components/ui/atoms/icons/DashboardIcons";
+import { useSidebarContext } from "@/context/sidebar.context";
 import { useTheme } from "@/context/theme.context";
 import sidebarTabs, { TabType } from "@/data/sidebar-links";
 import React, { Dispatch, SetStateAction, useState } from "react";
 
 const SidebarLinks = () => {
 	const [activeTab, setActiveTab] = useState<TabType>(sidebarTabs[0]);
+	const { toggle } = useSidebarContext();
 
 	return (
 		<div className="flex flex-col items-center gap-8 mt-16 xs:mt-6 w-full justify-center">
@@ -22,11 +24,13 @@ type TabItemProps = { activeTab: TabType; setActiveTab: Dispatch<SetStateAction<
 const TabItem = ({ activeTab, setActiveTab, tab }: TabItemProps) => {
 	const IconComp = DashboardIcons[tab.icon];
 	const { currentTheme } = useTheme();
+	const { toggle } = useSidebarContext();
 	return (
 		<div
 			className="group z-50 relative w-full items-center xs:justify-center flex gap-5 xs:gap-0 cursor-pointer select-none"
 			onClick={() => {
 				setActiveTab(tab);
+				toggle("close");
 			}}>
 			{tab.icon && (
 				<IconComp
