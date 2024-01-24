@@ -13,9 +13,10 @@ I minimized the use of 3rd party libraries, to ensure faster bundling and loadin
 
 ## Technologies Used
 
--   **Next.js (v.14):**
--   **TypeScript:**
--   **Tailwind CSS:**
+-   **Next.js (14.0.4):**
+-   **React (^18):**
+-   **TypeScript (^5):**
+-   **Tailwind CSS (^3):**
 
 ## Getting Started
 

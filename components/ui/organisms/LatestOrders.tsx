@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
 import { DocumentIcon } from "../atoms/icons";
-import { formatDate } from "@/utils";
+import { formatAmount, formatDate } from "@/utils";
 import latestOrders, { type IOrder } from "@/data/latestOrders";
 
 const LatestOrders = () => {
@@ -50,9 +50,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 			<div className="col-span-3 xs:col-span-2 text-zinc-300 md:hidden dark:text-white">
 				{new Date(date).toLocaleDateString().split("/").join("-")}
 			</div>
-			<div className="col-span-3 xs:col-span-2 text-[#0D062D] dark:text-white">
-				${order.amount.toLocaleString()}
-			</div>
+			<div className="col-span-3 xs:col-span-2 text-[#0D062D] dark:text-white">${formatAmount(order.amount)}</div>
 			<div
 				className={classNames(
 					"col-span-2 capitalize",
