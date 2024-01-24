@@ -39,10 +39,10 @@ const LatestOrders = () => {
 		},
 	];
 	return (
-		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white border border-[#EDF2F7] p-5 xl:p-3 duration-300">
+		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
 			{/* Top Header Section */}
 			<div className="mb-5 flex justify-between items-center w-full">
-				<h1 className="">Latest Orders</h1>
+				<h1 className="dark:text-white text-lg duration-300">Latest Orders</h1>
 				<p className="text-[#34CAA5] hover:underline select-none cursor-pointer">See all</p>
 			</div>
 
@@ -59,7 +59,7 @@ const LatestOrders = () => {
 const TableItem = ({ order }: { order: IOrder }) => {
 	const date = new Date("11-04-2004");
 	return (
-		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] cursor-default hover:bg-slate-50 duration-300">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] dark:border-opacity-50 cursor-default hover:bg-slate-50 dark:hover:bg-gray-500 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
 				<div className="w-8 h-8 overflow-hidden rounded-full flex justify-center items-center">
 					<Image
@@ -72,7 +72,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 						className="bg-zinc-200 rounded-full"
 					/>
 				</div>
-				<p className="flex text-xs xs:text-[15px] items-center gap-1">
+				<p className="flex text-xs xs:text-[15px] items-center gap-1 dark:text-white">
 					{order.user.name.split(" ")[0]}
 					<span className="xl:block lg:hidden md:block hidden">{order.user.name.split(" ")[1]}</span>
 				</p>
@@ -80,10 +80,12 @@ const TableItem = ({ order }: { order: IOrder }) => {
 			<div className="col-span-3 xl:col-span-2 text-zinc-300 md:inline-grid hidden">
 				{formatDate(date, { shortMonth: true })}
 			</div>
-			<div className="col-span-3 xs:col-span-2 text-zinc-300 md:hidden">
+			<div className="col-span-3 xs:col-span-2 text-zinc-300 md:hidden dark:text-white">
 				{new Date(date).toLocaleDateString().split("/").join("-")}
 			</div>
-			<div className="col-span-3 xs:col-span-2 text-[#0D062D]">${order.amount.toLocaleString()}</div>
+			<div className="col-span-3 xs:col-span-2 text-[#0D062D] dark:text-white">
+				${order.amount.toLocaleString()}
+			</div>
 			<div
 				className={classNames(
 					"col-span-2 capitalize",
@@ -93,7 +95,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 			</div>
 			<div className="xs:flex hidden col-span-2 gap-2 items-center hover:underline cursor-pointer">
 				<DocumentIcon />
-				<p className="text-[#0D062D]">View</p>
+				<p className="text-[#0D062D] dark:text-white">View</p>
 			</div>
 		</div>
 	);

@@ -8,11 +8,11 @@ const ProfileCard = () => {
 			<div className="w-10 h-10 overflow-hidden rounded-full bg-zinc-200">
 				<Image src={"/assets/images/user.png"} alt="user" height={100} width={100} loading="lazy" unoptimized />
 			</div>
-			<div className="hidden sm:grid">
-				<h1 className="text-[#26282C]">Justin Bergson</h1>
-				<p className="text-[#787486] text-sm lowercase">Justin@gmail.com</p>
+			<div className="hidden sm:grid duration-300">
+				<h1 className="text-[#26282C] dark:text-white">Justin Bergson</h1>
+				<p className="text-[#787486] dark:text-white/60 text-sm lowercase">Justin@gmail.com</p>
 			</div>
-			<ChevronDown className="sm:flex hidden" />
+			<ChevronDown className="sm:flex hidden text-[#d31119]" />
 		</div>
 	);
 };
