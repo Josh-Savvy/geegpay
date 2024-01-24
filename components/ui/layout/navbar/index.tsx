@@ -4,7 +4,7 @@ import { CalendarIcon } from "../../atoms/icons";
 import ProfileCard from "./ProfileCard";
 import { formatDate } from "@/utils";
 import Hamburger from "./Hamburger";
-import NotificationBell from "../../common";
+import NotificationBell from "../../common/NotificationBell";
 
 const Navbar = () => {
 	return (

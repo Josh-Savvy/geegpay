@@ -4,8 +4,7 @@ import React from "react";
 import { BellIcon } from "../atoms/icons";
 
 const NotificationBell = () => {
-	const { isViewing, toggleNotificationsPanel } = useNotificationPanel();
-
+	const { toggleNotificationsPanel } = useNotificationPanel();
 	return (
 		<div
 			onClick={() => {
