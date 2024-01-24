@@ -3,41 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { DocumentIcon } from "../atoms/icons";
 import { formatDate } from "@/utils";
-type IOrder = { user: { avatar?: string; name: string }; amount: number; date: string; status: "paid" | "refund" };
+import latestOrders, { type IOrder } from "@/data/latestOrders";
 
 const LatestOrders = () => {
-	const latestOrders: IOrder[] = [
-		{
-			user: { name: "Marcus Bergson", avatar: "/assets/images/avatar_1.png" },
-			amount: 80000,
-			date: new Date().toDateString(),
-			status: "paid",
-		},
-		{
-			user: { name: "Jaydon Vaccaro", avatar: "/assets/images/avatar_2.png" },
-			amount: 150000,
-			date: new Date().toDateString(),
-			status: "refund",
-		},
-		{
-			user: { name: "Corey Schleifer", avatar: "/assets/images/avatar_3.png" },
-			amount: 87000,
-			date: new Date().toDateString(),
-			status: "paid",
-		},
-		{
-			user: { name: "Cooper Press", avatar: "/assets/images/avatar_4.png" },
-			amount: 100000,
-			date: new Date().toDateString(),
-			status: "refund",
-		},
-		{
-			user: { name: "Phillip Lubin", avatar: "/assets/images/avatar_5.png" },
-			amount: 78000,
-			date: new Date().toDateString(),
-			status: "paid",
-		},
-	];
 	return (
 		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
 			{/* Top Header Section */}
@@ -89,11 +57,15 @@ const TableItem = ({ order }: { order: IOrder }) => {
 			<div
 				className={classNames(
 					"col-span-2 capitalize",
-					order.status === "paid" ? "text-success" : "text-danger",
+					order.status === "refund"
+						? "text-danger"
+						: order.status === "pending"
+						? "text-warning"
+						: "text-success",
 				)}>
 				{order.status}
 			</div>
-			<div className="xs:flex hidden col-span-2 gap-2 items-center hover:underline cursor-pointer">
+			<div className="xs:flex hidden col-span-2 gap-2 items-center dark:text-white hover:underline cursor-pointer">
 				<DocumentIcon />
 				<p className="text-[#0D062D] dark:text-white">View</p>
 			</div>

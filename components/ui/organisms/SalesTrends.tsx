@@ -1,16 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown } from "../atoms/icons";
-import { useTheme } from "@/context/theme.context";
 
 const SalesTrends = () => {
 	const filters = ["Daily", "Weekly", "Monthly", "Yearly"];
 	const [currentFilter, setCurrentFilter] = useState<string>(filters[1]);
-	// const { currentTheme } = useTheme();
-
-	// useEffect(() => {
-	// 	console.log({ currentTheme });
-	// }, [currentTheme]);
 
 	return (
 		<div className="w-full rounded-xl dark:bg-gray-600 bg-white border border-[#EDF2F7] dark:border-[#B2ABAB] dark:border-opacity-50 p-5 xl:p-3 duration-300">
@@ -27,7 +21,7 @@ const SalesTrends = () => {
 									<li
 										onClick={() => setCurrentFilter(fil)}
 										key={id}
-										className="p-3 duration-300 hover:bg-zinc-200 dark:text-white hover:dark:text-black">
+										className="text-sm p-3 duration-300 hover:bg-zinc-200 dark:text-white hover:dark:text-black">
 										{fil}
 									</li>
 								))}
