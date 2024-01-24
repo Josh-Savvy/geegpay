@@ -26,7 +26,7 @@ const AnalyticsCards = ({ icon, name, percentage, value, is_money }: AnalyticsCa
 			<p className="sm:text-xl text-lg dark:text-white">
 				{is_money ? "$" + value.toLocaleString() : value.toLocaleString()}
 			</p>
-			{/* Todo: implemented dynamic percentage system */}
+			{/* Todo: implement dynamic percentage system */}
 			<span className="flex items-center text-sm gap-1.5 w-full">
 				<span
 					className={`flex items-center gap-2 p-1 px-3 rounded-full duration-300 ${
@@ -39,10 +39,7 @@ const AnalyticsCards = ({ icon, name, percentage, value, is_money }: AnalyticsCa
 					/>
 					{percentage}
 				</span>
-				<p className="flex-grow dark:text-white whitespace-nowrap" style={{ fontFamily: "Inter" }}>
-					{" "}
-					vs. previous month
-				</p>
+				<p className="flex-grow dark:text-white whitespace-nowrap font_inter"> vs. previous month</p>
 			</span>
 			{/* &&  */}
 		</div>

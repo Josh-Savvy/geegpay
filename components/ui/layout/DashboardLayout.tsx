@@ -8,7 +8,7 @@ type DashboardLayoutProps = {
 };
 
 const DashboardLayout = ({ children, className }: DashboardLayoutProps) => {
-	const defaultClasses = "flex";
+	const defaultClasses = "flex hide_scroll_bar";
 	return (
 		<main className={classNames(defaultClasses, className)}>
 			<Sidebar />

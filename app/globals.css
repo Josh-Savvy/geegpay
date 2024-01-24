@@ -12,3 +12,15 @@ body {
 	background: #fafafa;
 	overflow-x: hidden;
 }
+
+.font_inter {
+	font-family: "Inter" !important;
+}
+.hide_scroll_bar::-webkit-scrollbar {
+	display: none !important;
+}
+
+.hide_scroll_bar {
+	-ms-overflow-style: none !important;
+	scrollbar-width: none !important;
+}
