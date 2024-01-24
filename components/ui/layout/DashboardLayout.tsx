@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Sidebar from "../organisms/sidebar";
+import Sidebar from "./sidebar";
 import classNames from "classnames";
 
 type DashboardLayoutProps = {

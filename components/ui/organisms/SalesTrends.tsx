@@ -9,7 +9,7 @@ const SalesTrends = () => {
 	const { currentTheme } = useTheme();
 
 	return (
-		<div className="w-full rounded-xl dark:bg-gray-600 bg-white border border-[#EDF2F7] dark:border-[#B2ABAB] dark:border-opacity-50 p-5 xl:p-3 duration-300">
+		<div className="w-full rounded-xl dark:bg-[#181818] bg-white border border-[#EDF2F7] dark:border-[#B2ABAB] dark:border-opacity-20 p-5 xl:p-3 duration-300">
 			<div className="flex items-center justify-between">
 				<h1 className="text-lg dark:text-white">Sales Trends</h1>
 				<div className="flex items-center gap-3">
@@ -22,7 +22,7 @@ const SalesTrends = () => {
 							color={currentTheme === "dark" ? "#b2abab" : ""}
 						/>
 						<div className="absolute z-10 group-hover:flex flex-col gap-1 hidden left-0 origin-top top-0 w-full pt-9">
-							<ul className="w-full bg-white dark:bg-gray-600 border border-[#E1DFDF] dark:border-black duration-300">
+							<ul className="w-full bg-white dark:bg-[#181818] border border-[#E1DFDF] dark:border-black duration-300">
 								{filters.map((fil, id) => (
 									<li
 										onClick={() => setCurrentFilter(fil)}

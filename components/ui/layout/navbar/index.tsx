@@ -8,7 +8,7 @@ import NotificationBell from "../../common/NotificationBell";
 
 const Navbar = () => {
 	return (
-		<nav className="duration-300 flex justify-between items-center p-3 pt-5 border-b border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-gray-800 bg-[#fafafa] z-30">
+		<nav className="duration-300 flex justify-between items-center p-3 pt-5 border-b border-l dark:border-opacity-20 border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-[#0C0A09] bg-[#fafafa] z-30">
 			<div className="text-[#26282C] text-lg font-medium dark:text-white flex items-center gap-2">
 				<Hamburger />
 				<p className="cursor-pointer">Dashboard</p>
@@ -19,7 +19,7 @@ const Navbar = () => {
 					<SearchBar
 						type="search"
 						containerProps={{
-							className: "dark:text-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50",
+							className: "dark:text-white dark:bg-[#181818] dark:border-[#B2ABAB] dark:border-opacity-20",
 						}}
 					/>
 				</div>

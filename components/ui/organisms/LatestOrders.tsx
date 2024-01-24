@@ -7,7 +7,7 @@ import latestOrders, { type IOrder } from "@/data/latestOrders";
 
 const LatestOrders = () => {
 	return (
-		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-gray-600 dark:border-[#B2ABAB] dark:border-opacity-50 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
+		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-[#181818] dark:border-[#B2ABAB] dark:border-opacity-20 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
 			{/* Top Header Section */}
 			<div className="mb-5 flex justify-between items-center w-full">
 				<h1 className="dark:text-white text-lg duration-300">Latest Orders</h1>
@@ -26,7 +26,7 @@ const LatestOrders = () => {
 const TableItem = ({ order }: { order: IOrder }) => {
 	const date = new Date("11-04-2004");
 	return (
-		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] dark:border-opacity-50 cursor-default hover:bg-slate-50 dark:hover:bg-gray-500 duration-300">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] dark:border-opacity-20 cursor-default hover:bg-slate-50 dark:hover:bg-gray-900 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
 				<div className="w-8 h-8 overflow-hidden rounded-full hidden xs:flex justify-center items-center">
 					<Image
@@ -41,7 +41,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 				</div>
 				<p className="flex items-center gap-1 text-[#3A3F51] dark:text-white">
 					{order.user.name.split(" ")[0]}
-					<span className="xl:block lg:hidden md:block hidden">{order.user.name.split(" ")[1]}</span>
+					<span className="sm:block hidden">{order.user.name.split(" ")[1]}</span>
 				</p>
 			</div>
 			<div className="col-span-3 xl:col-span-2 dark:text-[#b2abab] text-[#737373] md:inline-grid hidden">

@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 * {
-	/* font-family: "Jarkata Sans"; */
-	font-family: "DM Sans";
-	/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+	font-family: "Plus Jakarta Sans";
 	scroll-behavior: smooth;
 }
 body {

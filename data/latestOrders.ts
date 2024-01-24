@@ -1,3 +1,17 @@
+type Month =
+	| "January"
+	| "February"
+	| "March"
+	| "April"
+	| "May"
+	| "June"
+	| "July"
+	| "August"
+	| "September"
+	| "October"
+	| "November"
+	| "December";
+
 export type IOrder = {
 	user: { avatar?: string; name: string };
 	amount: number;
@@ -30,7 +44,6 @@ const latestOrders: IOrder[] = [
 		date: new Date().toDateString(),
 		status: "paid",
 	},
-
 	{
 		user: { name: "Cooper Press", avatar: "/assets/images/avatar_4.png" },
 		amount: 100000,
@@ -49,6 +62,16 @@ const latestOrders: IOrder[] = [
 		date: new Date().toDateString(),
 		status: "pending",
 	},
+];
+
+export const allOrdersData: { month: Month; data: IOrder[] }[] = [
+	{ month: "November", data: latestOrders },
+	{ month: "December", data: latestOrders },
+	{ month: "January", data: latestOrders },
+	{ month: "February", data: latestOrders },
+	{ month: "March", data: latestOrders },
+	{ month: "April", data: latestOrders },
+	{ month: "May", data: latestOrders },
 ];
 
 export default latestOrders;
