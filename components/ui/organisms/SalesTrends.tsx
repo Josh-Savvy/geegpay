@@ -14,11 +14,11 @@ const SalesTrends = () => {
 				<h1 className="text-lg dark:text-white">Sales Trends</h1>
 				<div className="flex items-center gap-3">
 					<p className="text-sm sm:block hidden dark:text-white">Sort by</p>
-					<div className="group relative border border-[#E1DFDF] rounded-full w-32 p-1.5 px-3 cursor-pointer flex items-center justify-between gap-5">
+					<div className="group relative border border-[#E1DFDF] dark:border-opacity-50 rounded-full w-32 p-1.5 px-3 cursor-pointer flex items-center justify-between gap-5">
 						<p className="text-sm dark:text-white">{currentFilter}</p>
 						<ChevronDown
 							size={15}
-							className="group-hover:rotate-[180deg] duration-300"
+							className="group-hover:rotate-[180deg] fill-current text-[#0D062D] dark:text-[#b2abab] duration-300"
 							color={currentTheme === "dark" ? "#b2abab" : ""}
 						/>
 						<div className="absolute z-10 group-hover:flex flex-col gap-1 hidden left-0 origin-top top-0 w-full pt-9">

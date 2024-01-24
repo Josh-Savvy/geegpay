@@ -20,7 +20,7 @@ const SearchBar = ({ type, containerProps, containerRef, className, ref, ...rest
 
 	return (
 		<div ref={containerRef} {...container} className={classNames(defaultContainerClass, containerClass)}>
-			{type == "search" ? <SearchIcon color={currentTheme === "dark" ? "#b2abab" : ""} /> : <></>}
+			{type == "search" ? <SearchIcon className="fill-current text-black dark:text-[#b2abab]" /> : <></>}
 			<input type={type} ref={ref} {...rest} className={classNames(defaulInputClass, className)} />
 		</div>
 	);

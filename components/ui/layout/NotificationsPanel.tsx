@@ -17,7 +17,7 @@ const NotificationsPanel = ({ closeOnBackdropClick }: NotificationsPanelProps) =
 					onClick={() => {
 						if (closeOnBackdropClick) toggleNotificationsPanel("close");
 					}}
-					className="absolute w-full bg-black/20 backdrop-blur-sm h-full left-0 top-0 z-50"
+					className="absolute w-full bg-black/20 h-screen backdrop-blur-sm left-0 top-0 z-50"
 				/>
 			)}
 			<div
@@ -66,13 +66,13 @@ const NotificationsHead = () => {
 
 	return (
 		<div className="flex items-center justify-between">
-			<h1 className="dark:text-[#b2abab]">All Notifications</h1>
+			<h1 className="dark:text-[#ffffff]">All Notifications</h1>
 			<button
 				type="submit"
 				onClick={() => {
 					toggleNotificationsPanel("close");
 				}}
-				className="dark:text-[#b2abab] border border-[#b2abab] rounded px-5 p-1">
+				className="dark:text-[#ffffff] border border-[#b2abab] rounded px-5 p-1">
 				&times; Close
 			</button>
 		</div>

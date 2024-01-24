@@ -13,7 +13,7 @@ const ProfileCard = () => {
 				<h1 className="text-[#26282C] dark:text-white">Justin Bergson</h1>
 				<p className="text-[#787486] dark:text-white/60 text-sm lowercase">Justin@gmail.com</p>
 			</div>
-			<ChevronDown className="sm:flex hidden text-[#d31119]" />
+			<ChevronDown className="sm:flex hidden fill-current text-[#0D062D] dark:text-[#b2abab] duration-300" />
 			<div className="group-hover:md:flex hidden absolute w-full top-0 pt-14 duration-300 left-0">
 				<div className="grid bg-white dark:bg-gray-800 dark:text-white border border-[#b2abab] dark:border-opacity-50 w-full rounded-xl overflow-hidden">
 					{profileLinks.map((p, id) => {

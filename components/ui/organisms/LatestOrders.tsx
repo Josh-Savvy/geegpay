@@ -28,7 +28,7 @@ const TableItem = ({ order }: { order: IOrder }) => {
 	return (
 		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] dark:border-opacity-50 cursor-default hover:bg-slate-50 dark:hover:bg-gray-500 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
-				<div className="w-8 h-8 overflow-hidden rounded-full flex justify-center items-center">
+				<div className="w-8 h-8 overflow-hidden rounded-full hidden xs:flex justify-center items-center">
 					<Image
 						src={String(order.user.avatar)}
 						alt="user"
@@ -39,21 +39,24 @@ const TableItem = ({ order }: { order: IOrder }) => {
 						className="bg-zinc-200 rounded-full"
 					/>
 				</div>
-				<p className="flex text-xs xs:text-[15px] items-center gap-1 dark:text-white">
+				<p className="flex items-center gap-1 text-[#3A3F51] dark:text-white">
 					{order.user.name.split(" ")[0]}
 					<span className="xl:block lg:hidden md:block hidden">{order.user.name.split(" ")[1]}</span>
 				</p>
 			</div>
-			<div className="col-span-3 xl:col-span-2 text-zinc-300 md:inline-grid hidden">
+			<div className="col-span-3 xl:col-span-2 dark:text-[#b2abab] text-[#737373] md:inline-grid hidden">
 				{formatDate(date, { shortMonth: true })}
 			</div>
-			<div className="col-span-3 xs:col-span-2 text-zinc-300 md:hidden dark:text-white">
+			<div className="col-span-3 sm:col-span-2 dark:text-[#b2abab] text-[#737373] md:hidden">
 				{new Date(date).toLocaleDateString().split("/").join("-")}
 			</div>
-			<div className="col-span-3 xs:col-span-2 text-[#0D062D] dark:text-white">${formatAmount(order.amount)}</div>
+			<div className="sm:inline-flex hidden col-span-2 text-[#0D062D] dark:text-white">
+				${order.amount.toLocaleString()}
+			</div>
+			<div className="col-span-3 sm:hidden text-[#0D062D] dark:text-white">${formatAmount(order.amount)}</div>
 			<div
 				className={classNames(
-					"col-span-2 capitalize",
+					"col-span-3 sm:col-span-2 capitalize",
 					order.status === "refund"
 						? "text-danger"
 						: order.status === "pending"
@@ -62,8 +65,8 @@ const TableItem = ({ order }: { order: IOrder }) => {
 				)}>
 				{order.status}
 			</div>
-			<div className="xs:flex hidden col-span-2 gap-2 items-center dark:text-white hover:underline cursor-pointer">
-				<DocumentIcon size={18} />
+			<div className="sm:flex hidden col-span-2 gap-2 items-center dark:text-white hover:underline cursor-pointer">
+				<DocumentIcon size={18} className="fill-current text-[#292D32] dark:text-[#b2abab]" />
 				<p className="text-[#0D062D] dark:text-white">View</p>
 			</div>
 		</div>
@@ -74,10 +77,10 @@ const TableHead = () => {
 	return (
 		<div className="grid grid-cols-12 xl:grid-cols-11 gap-2 text-sm xs:text-[15px] text-[#9CA4AB] font-[300]">
 			<div className="col-span-3">Name</div>
-			<div className="col-span-3 xs:col-span-2 md:col-span-3 xl:col-span-2">Date</div>
-			<div className="col-span-3 xs:col-span-2">Amount</div>
+			<div className="col-span-3 sm:col-span-2 md:col-span-3 xl:col-span-2">Date</div>
+			<div className="col-span-3 sm:col-span-2">Amount</div>
 			<div className="col-span-2">Status</div>
-			<div className="col-span-2 xs:inline-grid hidden">Invoice</div>
+			<div className="col-span-2 sm:inline-grid hidden">Invoice</div>
 		</div>
 	);
 };

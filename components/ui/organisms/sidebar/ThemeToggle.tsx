@@ -12,6 +12,7 @@ const ThemeToggle = () => {
 		<div className="flex justify-start items-start">
 			<div className="flex xs:flex-col gap-3 bg-white dark:bg-[#0D062D] duration-300 p-1.5 rounded-full mt-5 justify-start items-start">
 				<div
+					title="light mode toggle"
 					onClick={() => toggleTheme("light")}
 					className={classNames(
 						"flex items-center justify-center cursor-pointer p-2.5 duration-500 rounded-full",
@@ -20,6 +21,7 @@ const ThemeToggle = () => {
 					<Sun size={20} color={currentTheme === "light" ? "#ffffff" : "#B2ABAB"} />
 				</div>
 				<div
+					title="dark mode toggle"
 					onClick={() => toggleTheme("dark")}
 					className={classNames(
 						"flex items-center justify-center cursor-pointer p-1 duration-500 rounded-full",

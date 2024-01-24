@@ -25,7 +25,7 @@ const Navbar = () => {
 				</div>
 				{/* Calendar */}
 				<div className="hidden md:flex items-center gap-3">
-					<CalendarIcon />
+					<CalendarIcon className="fill-current stroke-current dark:text-[#b2abab] text-black" />
 					<p className="font-medium text-sm dark:text-white">{formatDate()}</p>
 				</div>
 				{/* Notification */}
