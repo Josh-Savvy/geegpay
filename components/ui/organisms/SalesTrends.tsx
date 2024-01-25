@@ -11,8 +11,10 @@ const SalesTrends = () => {
 	const [currentFilter, setCurrentFilter] = useState<Filter>(filters[2]);
 	const { currentTheme } = useTheme();
 	const [data, setData] = useState<number[]>([35.0, 25.0, 20.0, 50, 28.9, 23.9, 30, 234, 234, 1324]);
+	const [initialLoading, setInitialLoading] = useState<boolean>(true);
 
 	const fetchData = () => {
+		if (initialLoading) setInitialLoading(false);
 		setData((d) => d.map(() => Math.random() * 100)); // Generate new random data
 	};
 
@@ -61,7 +63,15 @@ const SalesTrends = () => {
 				</div>
 			</div>
 			<div className="h-[50dvh] w-full mt-8 text-xs">
-				<BarChartComponent data={data} />
+				{initialLoading ? (
+					<div className="flex justify-center duration-300 items-center w-full h-full">
+						<div className="flex justify-center items-center h-16 w-16 rounded-full relative overflow-hidden  bg-gradient-to-r from-[#34CAA5] to-[#fff] animate-spin">
+							<div className="absolute h-[90%] w-[90%] bg-white dark:bg-[#181818] rounded-full" />
+						</div>
+					</div>
+				) : (
+					<BarChartComponent data={data} />
+				)}
 			</div>
 		</div>
 	);

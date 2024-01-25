@@ -2,12 +2,13 @@
 
 ## Overview
 
-This project is built using Next.js, TypeScript, and Tailwind CSS.
-I minimized the use of 3rd party libraries, to ensure faster bundling and loading time, and an optimzed UX. It also includes a Dark Mode feature for enhanced user experience.
+This project is a fully-functional Analytics Dashboard, built using Next.js, TypeScript, and Tailwind CSS.
+Combining the unique SSG features of Nextjs and the minimized the use of 3rd party libraries, a faster bundling, loading time and an optimzed UX was achieved. It also includes a Dark Mode feature for enhanced user experience.
 
 ## Features
 
 -   **Data Visualization:** Interactive charts and graphs to present data in a meaningful way.
+-   **Sales Trends Data Filter:** Demonstration of real-time fetching.
 -   **Responsive Design:** A mobile-friendly dashboard that adapts to various screen sizes.
 -   **Dark Mode:** Toggle between light and dark themes for comfortable viewing in different environments.
 

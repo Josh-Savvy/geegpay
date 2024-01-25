@@ -17,7 +17,7 @@ const BarChartComponent = ({ data }: { data: number[] }) => {
 				<Tooltip
 					animationDuration={100}
 					cursor={false}
-					position={{ y: -{} + 200, x: -{} + 8 }}
+					position={{ y: -{} + 200, x: -{} + 10 }}
 					offset={-50}
 					animationEasing="ease-in-out"
 					filterNull
