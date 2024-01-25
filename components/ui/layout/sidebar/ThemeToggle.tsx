@@ -12,7 +12,7 @@ const ThemeToggle = ({ className }: { className?: string }) => {
 		<div className={classNames("flex justify-start items-start", className)}>
 			<div
 				onClick={() => toggleTheme()}
-				className="cursor-pointer flex xs:flex-col gap-3 bg-white dark:bg-[#0D062D] duration-300 p-1.5 rounded-full mt-5 justify-start items-start">
+				className="cursor-pointer flex xs:flex-col gap-3 bg-white dark:bg-[#0D062D] duration-300 p-1 rounded-full mt-5 justify-start items-start">
 				<div
 					title="light mode toggle"
 					className={classNames(

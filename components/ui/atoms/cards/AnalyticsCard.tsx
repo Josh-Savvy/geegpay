@@ -44,14 +44,14 @@ const AnalyticsCard = ({ icon, name, is_money, data, isLoading, index }: Analyti
 					<AreaChartComponent {...{ color, strokeColor: color, data }} />
 				</div>
 			</div>
-			<h1 className="text-[#898989] capitalize dark:text-white duration-300 sm:text-[18px]">{name}</h1>
-			<p className="sm:text-[24px] text-lg text-[#3A3F51] dark:text-white font-medium">
+			<h1 className="text-[#898989] capitalize dark:text-white duration-300 sm:text-[16px] font-[300]">{name}</h1>
+			<p className="sm:text-[24px] text-lg text-[#3A3F51] dark:text-white font-medium tracking-tight">
 				{is_money ? "$" + value.toLocaleString() : value.toLocaleString()}
 			</p>
 			{/* Todo: implement dynamic percentage system */}
 			<span className="tracking-tight flex items-center text-sm gap-1.5 w-full">
 				<span
-					className={`flex items-center gap-1 p-1 px-3 rounded-full duration-300 ${
+					className={`flex items-center gap-1 p-1 px-3 rounded-full duration-300 text-[12px] font-[300] ${
 						!percentageThreshold ? "bg-[#ED544E]/10 text-[#ED544E]" : "bg-[#34CAA5]/10 text-[#34CAA5]"
 					}`}>
 					{percentageThreshold ? (

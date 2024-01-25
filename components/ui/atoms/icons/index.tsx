@@ -324,8 +324,8 @@ export const TrendingMovementDownIcon = ({ color, size, ...rest }: IconProps) =>
 			<path
 				d="M0.5 0.5L3.5 3.5L5.5 1.5L9.5 5.5"
 				stroke={color || "#ED544E"}
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 			<path d="M6 5.5H9.5V2" stroke={color || "#ED544E"} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>

@@ -15,18 +15,20 @@ const LatestOrders = () => {
 			</div>
 			<TableHead />
 			<div className="grid items-center mt-3">
-				{latestOrders.map((order, id) => {
-					return <TableItem key={id} {...{ order }} />;
-				})}
+				{latestOrders
+					.map((order, id) => {
+						return <TableItem key={id} {...{ order }} />;
+					})
+					.slice(0, 5)}
 			</div>
 		</div>
 	);
 };
 
 const TableItem = ({ order }: { order: IOrder }) => {
-	const date = new Date("11-04-2004");
+	const date = new Date(order.date || "11-04-2004");
 	return (
-		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-4 border-t border-[#EDF2F6] dark:border-opacity-20 cursor-default hover:bg-slate-50 dark:hover:bg-gray-900 duration-300">
+		<div className="grid grid-cols-12 xl:grid-cols-11 gap-6 md:gap-4 text-sm items-center py-2 border-t border-[#EDF2F6] dark:border-opacity-20 cursor-default hover:bg-slate-50 dark:hover:bg-gray-900 duration-300">
 			<div className="col-span-3 flex items-center gap-2">
 				<div className="w-8 h-8 overflow-hidden rounded-full hidden xs:flex justify-center items-center">
 					<Image
