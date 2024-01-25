@@ -1,16 +1,4 @@
-type Month =
-	| "January"
-	| "February"
-	| "March"
-	| "April"
-	| "May"
-	| "June"
-	| "July"
-	| "August"
-	| "September"
-	| "October"
-	| "November"
-	| "December";
+import { Month } from "./months";
 
 export type IOrder = {
 	user: { avatar?: string; name: string };
@@ -65,13 +53,13 @@ const latestOrders: IOrder[] = [
 ];
 
 export const allOrdersData: { month: Month; data: IOrder[] }[] = [
-	{ month: "November", data: latestOrders },
-	{ month: "December", data: latestOrders },
 	{ month: "January", data: latestOrders },
 	{ month: "February", data: latestOrders },
 	{ month: "March", data: latestOrders },
 	{ month: "April", data: latestOrders },
 	{ month: "May", data: latestOrders },
+	{ month: "June", data: latestOrders },
+	{ month: "July", data: latestOrders },
 ];
 
 export default latestOrders;

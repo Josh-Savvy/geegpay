@@ -1,73 +1,36 @@
-"use client";
+// "use client";
 
+import monthsArr from "@/data/months";
 import classNames from "classnames";
-import React, { useMemo, useRef, useState } from "react";
+import React from "react";
 import { ResponsiveContainer, BarChart, Bar, Tooltip, CartesianGrid, XAxis, YAxis } from "recharts";
 
-const data = [
-	{
-		month: "Page A",
-		total: 35.0,
-	},
-	{
-		month: "Page B",
-		total: 25.0,
-	},
-	{
-		month: "Page C",
-		total: 20.0,
-	},
-	{
-		month: "Page D",
-		total: 68.8,
-	},
-	{
-		month: "Page E",
-		total: 48.9,
-	},
-	{
-		month: "Page F",
-		total: 23.9,
-	},
-	{
-		month: "Page G",
-		total: 34.9,
-	},
-];
-
-const BarChartComponent = () => {
-	const [activeBarIndex, setActiveBarIndex] = useState<any>({});
-	const active: object = useMemo(() => {
-		return {};
-	}, [activeBarIndex]);
-
+const BarChartComponent = ({ data }: { data: number[] }) => {
+	const mappedData = data
+		.map((val, id) => {
+			return { month: monthsArr[id], total: val };
+		})
+		.slice(0, monthsArr.length);
 	return (
 		<ResponsiveContainer width="100%" height="100%">
-			<BarChart
-				width={100}
-				height={100}
-				data={data}
-				onMouseMove={(e) => {
-					setActiveBarIndex(e.activeTooltipIndex);
-				}}>
+			<BarChart width={100} height={100} data={mappedData}>
 				<Tooltip
 					animationDuration={100}
 					cursor={false}
-					position={{ y: -active + 200, x: -active + 8 }}
+					position={{ y: -{} + 200, x: -{} + 8 }}
 					offset={-50}
-					allowEscapeViewBox={{ x: true, y: true }}
 					animationEasing="ease-in-out"
 					filterNull
 					content={<CustomTooltip />}
 				/>
-				<XAxis dataKey="month" />
-				<YAxis tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)} />
 				<defs>
 					<linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
 						<stop offset="0%" stopColor="#34CAA5" />
 						<stop offset="100%" stopColor="#34CAA53A" />
 					</linearGradient>
 				</defs>
+				<XAxis tickFormatter={(value) => value.slice(0, 3)} dataKey={"month" || "week" || "day"} />
+				<YAxis tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)} />
 				<CartesianGrid strokeDasharray="5" vertical={false} />
 				<Tooltip
 					animationDuration={200}
@@ -77,10 +40,13 @@ const BarChartComponent = () => {
 					content={<CustomTooltip />}
 				/>
 				<Bar
-					className={classNames("hover:md:opacity-90 md:opacity-40 duration-300")}
+					className={classNames(
+						"md:dark:hover:opacity-90 md:hover:opacity-90 md:opacity-50 dark:md:opacity-40 duration-300 text-[#34CAA5]",
+					)}
 					radius={[50, 50, 0, 0]}
 					dataKey="total"
 					barSize={30}
+					// fill="currentColor"
 					fill="url(#colorUv)"
 					layout="horizontal"
 				/>

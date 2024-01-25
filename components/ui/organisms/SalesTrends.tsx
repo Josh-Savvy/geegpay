@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown } from "../atoms/icons";
 import { useTheme } from "@/context/theme.context";
 import BarChartComponent from "../atoms/charts/BarChartComponent";
@@ -8,6 +8,18 @@ const SalesTrends = () => {
 	const filters = ["Daily", "Weekly", "Monthly", "Yearly"];
 	const [currentFilter, setCurrentFilter] = useState<string>(filters[1]);
 	const { currentTheme } = useTheme();
+	const [data, setData] = useState<number[]>([35.0, 25.0, 20.0, 50, 28.9, 23.9, 30, 234, 234, 1324]);
+
+	useEffect(() => {
+		// Simulation of real-time data
+		const interval = setInterval(() => {
+			const newData = data.map(() => Math.random() * 100); // Generate new random data
+			setData(newData);
+		}, 5000);
+		return () => {
+			clearInterval(interval);
+		};
+	}, [data]);
 
 	return (
 		<div className="w-full rounded-xl dark:bg-[#181818] bg-white border border-[#EDF2F7] dark:border-[#B2ABAB] dark:border-opacity-20 p-5 xl:p-3 duration-300">
@@ -37,8 +49,8 @@ const SalesTrends = () => {
 					</div>
 				</div>
 			</div>
-			<div className="h-[50dvh] w-full mt-6 text-xs">
-				<BarChartComponent />
+			<div className="h-[50dvh] w-full mt-8 text-xs">
+				<BarChartComponent data={data} />
 			</div>
 		</div>
 	);
