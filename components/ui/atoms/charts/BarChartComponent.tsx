@@ -29,23 +29,25 @@ const BarChartComponent = ({ data }: { data: number[] }) => {
 						<stop offset="100%" stopColor="#34CAA53A" />
 					</linearGradient>
 				</defs>
-				<XAxis tickFormatter={(value) => value.slice(0, 3)} dataKey={"month" || "week" || "day"} />
-				<YAxis tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)} />
-				<CartesianGrid strokeDasharray="5" vertical={false} />
-				<Tooltip
-					animationDuration={200}
-					cursor={{ fill: "transparent" }}
-					animationEasing="ease-in-out"
-					filterNull
-					content={<CustomTooltip />}
+				<XAxis
+					tickLine={false}
+					axisLine={false}
+					tickFormatter={(value) => value.slice(0, 3)}
+					dataKey={"month" || "week" || "day"}
 				/>
+				<YAxis
+					tickLine={false}
+					axisLine={false}
+					tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)}
+				/>
+				<CartesianGrid strokeDasharray="5" vertical={false} />
 				<Bar
 					className={classNames(
 						"md:dark:hover:opacity-90 md:hover:opacity-90 md:opacity-50 dark:md:opacity-40 duration-300 text-[#34CAA5]",
 					)}
 					radius={[50, 50, 0, 0]}
 					dataKey="total"
-					barSize={30}
+					barSize={35}
 					// fill="currentColor"
 					fill="url(#colorUv)"
 					layout="horizontal"
