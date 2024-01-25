@@ -34,8 +34,8 @@ const BarChartComponent = ({ data, filter }: { data: number[]; filter?: BarChart
 				<XAxis
 					tickLine={false}
 					axisLine={false}
-					tickFormatter={(value) => value.slice(0, 3)}
-					dataKey={"month"}
+					tickFormatter={filter !== "Realtime" ? (value) => value.slice(0, 3) : (value) => "."}
+					dataKey={filter !== "Realtime" ? "month" : undefined}
 				/>
 				<YAxis
 					tickLine={false}

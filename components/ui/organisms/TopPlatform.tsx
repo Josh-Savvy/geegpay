@@ -28,9 +28,9 @@ const TopPlatform = () => {
 								{...{
 									value,
 									label: (
-										<div className="flex justify-between items-center">
-											<p className="text-[#525252] font-normal">${value.toLocaleString()}</p>
-											<p className="">+{percentage.toFixed(1)}%</p>
+										<div className="flex justify-between items-center text-[#525252] font-normal">
+											<p className="">${value.toLocaleString()}</p>
+											<p className="tracking-tight">+{percentage.toFixed(1)}%</p>
 										</div>
 									),
 									color: colors[id],

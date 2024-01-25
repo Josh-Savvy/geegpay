@@ -11,7 +11,7 @@ type ProgressProps = {
 	width?: number | string;
 };
 
-const Progress = ({ percentage, value, color, className, height, width }: ProgressProps) => {
+const Progress = ({ percentage, value, color, className, height, width, label }: ProgressProps) => {
 	return (
 		<>
 			<div
@@ -27,13 +27,13 @@ const Progress = ({ percentage, value, color, className, height, width }: Progre
 					}}
 				/>
 			</div>
-			{typeof percentage === "number" ? (
+			{!label ? (
 				<div className="flex justify-between items-center">
 					<p className="text-[#525252] font-normal">{value.toLocaleString()}</p>
 					<p className="">{percentage.toFixed(1)}%</p>
 				</div>
 			) : (
-				percentage
+				label
 			)}
 		</>
 	);
