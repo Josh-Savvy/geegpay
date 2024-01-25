@@ -31,7 +31,7 @@ const AnalyticsCards = ({ icon, name, percentage, is_money, data }: AnalyticsCar
 				{is_money ? "$" + value.toLocaleString() : value.toLocaleString()}
 			</p>
 			{/* Todo: implement dynamic percentage system */}
-			<span className="flex items-center text-sm gap-1.5 w-full">
+			<span className="tracking-tight flex items-center text-sm gap-1.5 w-full">
 				<span
 					className={`flex items-center gap-2 p-1 px-3 rounded-full duration-300 ${
 						!percentageThreshold ? "bg-[#ED544E]/10 text-[#ED544E]" : "bg-[#34CAA5]/10 text-[#34CAA5]"

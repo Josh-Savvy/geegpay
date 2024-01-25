@@ -7,13 +7,7 @@ interface AreaChartComponentProps<T> {
 }
 
 function AreaChartComponent<T>({ data }: AreaChartComponentProps<T>) {
-	return (
-		<ResponsiveContainer>
-			<AreaChart data={data}>
-				<Area dataKey="" type="monotone" fill="#d31119" />
-			</AreaChart>
-		</ResponsiveContainer>
-	);
+	return <></>;
 }
 
 export default AreaChartComponent;

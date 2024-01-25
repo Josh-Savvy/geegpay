@@ -27,6 +27,8 @@ const config: Config = {
 				secondary: "#3A3F51",
 				tertiary: "#0D062D",
 				primary: "#BB372F",
+				dark_bg: "#0C0A09",
+				dark_fg: "#181818",
 				warning: "#FFB74A",
 			},
 		},

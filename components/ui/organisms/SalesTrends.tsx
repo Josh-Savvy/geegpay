@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { ChevronDown } from "../atoms/icons";
 import { useTheme } from "@/context/theme.context";
+import BarChartComponent from "../atoms/charts/BarChartComponent";
 
 const SalesTrends = () => {
 	const filters = ["Daily", "Weekly", "Monthly", "Yearly"];
@@ -27,7 +28,7 @@ const SalesTrends = () => {
 									<li
 										onClick={() => setCurrentFilter(fil)}
 										key={id}
-										className="text-sm p-3 duration-300 hover:bg-zinc-200 dark:text-white hover:dark:text-black">
+										className="text-sm p-3 duration-300 dark:hover:bg-dark_bg hover:bg-zinc-200 dark:text-white">
 										{fil}
 									</li>
 								))}
@@ -36,7 +37,9 @@ const SalesTrends = () => {
 					</div>
 				</div>
 			</div>
-			<div className=""></div>
+			<div className="h-[50dvh] w-full mt-6 text-xs">
+				<BarChartComponent />
+			</div>
 		</div>
 	);
 };

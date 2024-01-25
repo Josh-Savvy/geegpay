@@ -25,7 +25,7 @@ const NotificationsPanel = ({ closeOnBackdropClick }: NotificationsPanelProps) =
 					"fixed z-50 h-screen max-w-xl xl:max-w-md right-0 top-0 duration-300",
 					isViewing ? "w-full" : "w-0",
 				)}>
-				<div className="py-4 md:py-8 flex flex-col bg-white dark:bg-gray-800 w-full h-full p-4 relative z-10 ml-auto duration-300">
+				<div className="py-4 md:py-8 flex flex-col bg-white dark:bg-dark_fg w-full h-full p-4 relative z-10 ml-auto duration-300">
 					<NotificationsHead />
 					<NotificationsBody />
 				</div>

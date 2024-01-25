@@ -15,12 +15,12 @@ const ProfileCard = () => {
 			</div>
 			<ChevronDown className="sm:flex hidden fill-current text-[#0D062D] dark:text-[#b2abab] duration-300" />
 			<div className="group-hover:md:flex hidden absolute w-full top-0 pt-14 duration-300 left-0">
-				<div className="grid bg-white dark:bg-gray-800 dark:text-white border border-[#b2abab] dark:border-opacity-50 w-full rounded-xl overflow-hidden">
+				<div className="grid bg-white dark:bg-dark_fg dark:text-white border border-[#b2abab] dark:border-opacity-50 w-full rounded-xl overflow-hidden">
 					{profileLinks.map((p, id) => {
 						return (
 							<span
 								key={id}
-								className="px-3 w-full p-2 hover:bg-gray-100 hover:dark:bg-[#181818] text-sm duration-300">
+								className="px-3 w-full p-2 hover:bg-gray-100 hover:dark:bg-dark_bg text-sm duration-300">
 								{p}
 							</span>
 						);
