@@ -7,31 +7,31 @@ import { ResponsiveContainer, BarChart, Bar, Tooltip, CartesianGrid, XAxis, YAxi
 const data = [
 	{
 		month: "Page A",
-		total: 4000,
+		total: 35.0,
 	},
 	{
 		month: "Page B",
-		total: 3500,
+		total: 25.0,
 	},
 	{
 		month: "Page C",
-		total: 2000,
+		total: 20.0,
 	},
 	{
 		month: "Page D",
-		total: 2780,
+		total: 68.8,
 	},
 	{
 		month: "Page E",
-		total: 1890,
+		total: 48.9,
 	},
 	{
 		month: "Page F",
-		total: 2390,
+		total: 23.9,
 	},
 	{
 		month: "Page G",
-		total: 3490,
+		total: 34.9,
 	},
 ];
 
@@ -61,7 +61,7 @@ const BarChartComponent = () => {
 					content={<CustomTooltip />}
 				/>
 				<XAxis dataKey="month" />
-				<YAxis />
+				<YAxis tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)} />
 				<defs>
 					<linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
 						<stop offset="0%" stopColor="#34CAA5" />
@@ -77,7 +77,7 @@ const BarChartComponent = () => {
 					content={<CustomTooltip />}
 				/>
 				<Bar
-					className={classNames("hover:opacity-90 opacity-40 duration-300")}
+					className={classNames("hover:md:opacity-90 md:opacity-40 duration-300")}
 					radius={[50, 50, 0, 0]}
 					dataKey="total"
 					barSize={30}
@@ -92,10 +92,10 @@ const BarChartComponent = () => {
 const CustomTooltip = ({ active, payload }: any) => {
 	if (active && payload && payload.length) {
 		return (
-			<div className="dark:bg-[#ffffff] bg-black rounded-lg dark:text-black text-white px-5 p-2 text-[14px] relative flex justify-center items-center">
+			<div className="dark:bg-[#ffffff] bg-black rounded-lg dark:text-black text-white px-5 p-2 text-[14px] relative flex justify-center items-center font-medium font_inter">
 				{payload.map((pld: any, id: number) => (
 					<div key={id} className="flex items-center gap-1 relative z-10">
-						<div>${pld.value}</div>
+						<div>${pld.value.toFixed(3)}</div>
 					</div>
 				))}
 				<div className="absolute h-[50%] w-[40%] bg-black dark:bg-white rotate-[50deg] bottom-1 left-5" />

@@ -12,21 +12,24 @@ const Sidebar = () => {
 	return (
 		<aside
 			className={classNames(
-				"overflow-hidden xs:overflow-visible duration-300 bg-[#F7F8FA] dark:bg-[#191919] fixed h-screen xs:sticky top-0 left-0 flex flex-col xs:items-center z-40 py-5",
+				"overflow-hidden xs:overflow-visible duration-300 bg-[#F7F8FA] dark:bg-[#191919] fixed h-screen xs:sticky top-0 left-0 flex flex-col xs:items-center z-40 py-8",
 				isOpen ? "w-full pl-10 xs:w-full xs:max-w-20 xs:pl-0" : "w-0 xs:w-full xs:max-w-20 pl-0 xs:pl-0",
 			)}>
-			<div className="flex items-center gap-3 relative">
-				<AppLogo />
-				<h1 className="xs:hidden text-[#26282C] text-lg font-medium dark:text-white">Dashboard</h1>
+			<div className="flex xs:block items-center gap-3 justify-between relative xs:w-auto w-full">
+				<div className="flex items-center gap-3">
+					<AppLogo />
+					<h1 className="xs:hidden text-[#26282C] text-lg font-medium dark:text-white">Dashboard</h1>
+				</div>
 				<div
 					onClick={() => toggle("close")}
-					className="xs:hidden absolute text-4xl right-10 cursor-pointer text-black dark:text-white">
+					className="-mt-3 pr-10 xs:hidden text-3xl cursor-pointer text-black dark:text-white">
 					&times;
 				</div>
 			</div>
+			<ThemeToggle className="xs:hidden" />
 			<SidebarLinks />
-			<ThemeToggle />
-			<div className="flex justify-center flex-col gap-8 xs:gap-5 xs:items-center absolute bottom-5">
+			<ThemeToggle className="hidden xs:flex" />
+			<div className="flex justify-center flex-col gap-8 xs:gap-5 xs:items-center xs:absolute mt-6 xs:mt-0 bottom-5">
 				<div className="flex gap-5 cursor-pointer group">
 					<CircledArrowRight className="cursor-pointer" />
 					<p

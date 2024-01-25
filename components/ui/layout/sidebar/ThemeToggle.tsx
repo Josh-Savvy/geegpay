@@ -5,15 +5,16 @@ import React, { useEffect } from "react";
 import { Moon, Sun } from "../../atoms/icons";
 import classNames from "classnames";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ className }: { className?: string }) => {
 	const { currentTheme, toggleTheme } = useTheme();
 
 	return (
-		<div className="flex justify-start items-start">
-			<div className="flex xs:flex-col gap-3 bg-white dark:bg-[#0D062D] duration-300 p-1.5 rounded-full mt-5 justify-start items-start">
+		<div className={classNames("flex justify-start items-start", className)}>
+			<div
+				onClick={() => toggleTheme()}
+				className="cursor-pointer flex xs:flex-col gap-3 bg-white dark:bg-[#0D062D] duration-300 p-1.5 rounded-full mt-5 justify-start items-start">
 				<div
 					title="light mode toggle"
-					onClick={() => toggleTheme("light")}
 					className={classNames(
 						"flex items-center justify-center cursor-pointer p-2.5 duration-500 rounded-full",
 						currentTheme === "light" ? "bg-[#34CAA5]" : "bg-transparent",
@@ -22,7 +23,6 @@ const ThemeToggle = () => {
 				</div>
 				<div
 					title="dark mode toggle"
-					onClick={() => toggleTheme("dark")}
 					className={classNames(
 						"flex items-center justify-center cursor-pointer p-1 duration-500 rounded-full",
 						currentTheme === "dark" ? "bg-[#34CAA5]" : "bg-transparent",
