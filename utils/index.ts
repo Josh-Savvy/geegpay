@@ -53,3 +53,10 @@ export function formatAmount(amount: number, options?: { withFraction?: boolean 
 		}
 	return "";
 }
+
+export const calculatePercentage = (data: number[]): number => {
+	const sum = data.reduce((acc, value) => acc + value, 0);
+	if (sum === 0) return 0;
+	const overallPercentage = sum / (data.length * 100);
+	return overallPercentage;
+};

@@ -1,35 +1,55 @@
-// "use client"
-import React from "react";
-import AnalyticsCards, { AnalyticsCardsProps } from "../atoms/cards/AnalyticsCard";
+"use client";
+
+import React, { useMemo } from "react";
+import AnalyticsCard, { AnalyticsCardsProps } from "../atoms/cards/AnalyticsCard";
+import useTotalData from "@/hooks/useTotalData";
 
 const TotalAnalytics = () => {
-	const analyticsData: AnalyticsCardsProps[] = [
-		{
-			icon: "AnalyticsBoxIcon",
-			name: "Total Orders",
-			percentage: 23.5,
-			data: [21, 23, 59, 29],
-		},
-		{
-			icon: "ThreeD_BoxIcon",
-			name: "Total Orders",
-			percentage: 53.5,
-			data: [30, 93, 30, 21],
-		},
-		{ icon: "CartIcon", name: "Total Orders", percentage: 83.5, data: [1102, 211, 231, 100] },
-		{
-			icon: "CoinIcon",
-			name: "Total Orders",
-			percentage: 23.5,
-			is_money: true,
-			data: [32, 41, 40, 21],
-		},
-	];
-	// allOrdersData
+	const { totalOrders, averageSales, totalIncome, totalRefund, isLoading } = useTotalData();
+
+	const analyticsData: Omit<AnalyticsCardsProps, "index">[] = useMemo(
+		() => [
+			{
+				icon: "AnalyticsBoxIcon",
+				name: "Total Orders",
+				data: totalOrders,
+			},
+			{
+				icon: "ThreeD_BoxIcon",
+				name: "Total Refund",
+				data: totalRefund,
+			},
+			{
+				icon: "CartIcon",
+				name: "Average Sales",
+				data: averageSales,
+			},
+			{
+				icon: "CoinIcon",
+				name: "Total Income",
+				is_money: true,
+				data: totalIncome,
+			},
+		],
+		[totalOrders, averageSales, totalIncome, totalRefund],
+	);
+
 	return (
 		<div className="grid sm:grid-cols-2 gap-4">
-			{analyticsData.map(({ icon, name, percentage, is_money, data }, index) => {
-				return <AnalyticsCards key={index} {...{ icon, name, percentage, data, is_money }} />;
+			{analyticsData.map(({ name, data, icon, is_money }, index) => {
+				return (
+					<AnalyticsCard
+						key={index}
+						{...{
+							index,
+							isLoading,
+							icon,
+							name,
+							data,
+							is_money,
+						}}
+					/>
+				);
 			})}
 		</div>
 	);

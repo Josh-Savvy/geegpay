@@ -1,27 +1,23 @@
 "use client";
 
-import classNames from "classnames";
-import React from "react";
-import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { noCurve } from "@/no-curve";
+import React, { useMemo } from "react";
+import { Area, AreaChart, Line, ResponsiveContainer } from "recharts";
 
-const AreaChartComponent = ({ data }: { data: number[] }) => {
+const AreaChartComponent = ({ data, color, strokeColor }: { data: number[]; color: string; strokeColor: string }) => {
+	const mappedData = data.map((d, i) => {
+		return { val: (i + 1).toString(), data: d };
+	});
 	return (
 		<ResponsiveContainer width="100%" height="100%">
-			<AreaChart
-				width={500}
-				height={400}
-				data={data}
-				margin={{
-					top: 10,
-					right: 30,
-					left: 0,
-					bottom: 0,
-				}}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis dataKey="name" />
-				<YAxis />
-				<Tooltip />
-				<Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+			<AreaChart width={100} height={100} data={mappedData}>
+				<defs>
+					<linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+						<stop offset="0%" stopColor={color} />
+						<stop offset="65%" stopColor={`${color}1A`} />
+					</linearGradient>
+				</defs>
+				<Area type={noCurve} dataKey="data" stroke={strokeColor} strokeWidth={1.2} fill="url(#areaFill)" />
 			</AreaChart>
 		</ResponsiveContainer>
 	);

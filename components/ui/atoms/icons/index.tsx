@@ -304,7 +304,7 @@ export const DocumentIcon = ({ size, color, ...rest }: IconProps) => {
 	);
 };
 
-export const TrendingMovementIcon = ({ color, size, ...rest }: IconProps) => {
+export const TrendingMovementUpIcon = ({ color, size, ...rest }: IconProps) => {
 	return (
 		<svg {...rest} width={size || "12"} height={size || "12"} viewBox="0 0 12 12" fill="none">
 			<path
@@ -314,6 +314,20 @@ export const TrendingMovementIcon = ({ color, size, ...rest }: IconProps) => {
 				strokeLinejoin="round"
 			/>
 			<path d="M7 3.5H10.5V7" stroke={color || "#34CAA5"} strokeLinecap="round" strokeLinejoin="round" />
+		</svg>
+	);
+};
+
+export const TrendingMovementDownIcon = ({ color, size, ...rest }: IconProps) => {
+	return (
+		<svg {...rest} width={size || "10"} height={size || "6"} viewBox="0 0 10 6" fill="none">
+			<path
+				d="M0.5 0.5L3.5 3.5L5.5 1.5L9.5 5.5"
+				stroke={color || "#ED544E"}
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+			<path d="M6 5.5H9.5V2" stroke={color || "#ED544E"} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	);
 };

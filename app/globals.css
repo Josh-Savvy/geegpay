@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--background: white;
+	--foreground: black;
+}
+
+[data-theme="dark"] {
+	--background: black;
+	--foreground: white;
+}
+
 * {
 	font-family: "Plus Jakarta Sans";
 	scroll-behavior: smooth;
 }
 body {
-	background: #fafafa;
+	/* background: #fafafa; */
 	overflow-x: hidden;
 }
 

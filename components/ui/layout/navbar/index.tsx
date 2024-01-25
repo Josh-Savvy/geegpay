@@ -18,6 +18,8 @@ const Navbar = () => {
 				<div className="lg:inline-block hidden">
 					<SearchBar
 						type="search"
+						placeholder="Search..."
+						className="text-[#A3A3A3] text-sm"
 						containerProps={{
 							className: "dark:text-white dark:bg-[#181818] dark:border-[#B2ABAB] dark:border-opacity-20",
 						}}
@@ -26,7 +28,7 @@ const Navbar = () => {
 				{/* Calendar */}
 				<div className="hidden md:flex items-center gap-3">
 					<CalendarIcon className="fill-current stroke-current dark:text-[#b2abab] text-black" />
-					<p className="font-medium text-sm dark:text-white">{formatDate()}</p>
+					<p className="font-medium text-sm dark:text-white font_inter">{formatDate()}</p>
 				</div>
 				{/* Notification */}
 				<NotificationBell />
