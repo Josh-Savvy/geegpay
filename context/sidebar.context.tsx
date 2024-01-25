@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useContext, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 
 type ISidebarContext = {
 	isOpen: boolean;
@@ -16,6 +16,14 @@ export const SidebarProvider = ({ children }: { children?: ReactNode }) => {
 			setIsOpen((p) => !p);
 		}
 	};
+
+	useEffect(() => {
+		if (isOpen) document.body.classList.add("overflow-hidden");
+		else {
+			document.body.classList.remove("overflow-hidden");
+		}
+	}, [isOpen]);
+
 	return <SidebarContext.Provider value={{ isOpen, toggle }}>{children}</SidebarContext.Provider>;
 };
 

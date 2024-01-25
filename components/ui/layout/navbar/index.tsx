@@ -5,13 +5,16 @@ import ProfileCard from "./ProfileCard";
 import { formatDate } from "@/utils";
 import Hamburger from "./Hamburger";
 import NotificationBell from "../../common/NotificationBell";
+import Link from "next/link";
 
 const Navbar = () => {
 	return (
 		<nav className="duration-300 flex justify-between items-center p-3 pt-3 border-b border-l dark:border-opacity-20 border-opacity-50 border-[#E5EAEF] dark:border-[#555] sticky top-0 dark:bg-[#0C0A09] bg-[#fafafa] z-30">
 			<div className="text-[#26282C] text-lg font-medium dark:text-white flex items-center gap-2">
 				<Hamburger />
-				<p className="cursor-pointer">Dashboard</p>
+				<Link prefetch={false} href="/">
+					<p className="cursor-pointer">Dashboard</p>
+				</Link>
 			</div>
 			<div className="flex items-center gap-4">
 				{/* Search */}

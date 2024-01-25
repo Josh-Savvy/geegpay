@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 type INotificationPanel = {
 	isViewing: boolean;
@@ -20,6 +20,13 @@ export const NotificationsPanelProvider = ({ children }: { children?: ReactNode 
 			setIsViewing((p) => !p);
 		}
 	};
+
+	useEffect(() => {
+		if (isViewing) document.body.classList.add("overflow-hidden");
+		else {
+			document.body.classList.remove("overflow-hidden");
+		}
+	}, [isViewing]);
 
 	return (
 		<NotificationPanel.Provider value={{ isViewing, toggleNotificationsPanel }}>

@@ -17,7 +17,7 @@ const NotificationsPanel = ({ closeOnBackdropClick }: NotificationsPanelProps) =
 					onClick={() => {
 						if (closeOnBackdropClick) toggleNotificationsPanel("close");
 					}}
-					className="absolute w-full bg-black/20 h-screen backdrop-blur-sm left-0 top-0 z-50"
+					className="fixed w-full bg-black/20 h-screen backdrop-blur-sm left-0 top-0 z-50"
 				/>
 			)}
 			<div
