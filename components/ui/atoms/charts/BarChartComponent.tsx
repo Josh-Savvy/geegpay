@@ -5,7 +5,9 @@ import classNames from "classnames";
 import React from "react";
 import { ResponsiveContainer, BarChart, Bar, Tooltip, CartesianGrid, XAxis, YAxis } from "recharts";
 
-const BarChartComponent = ({ data }: { data: number[] }) => {
+export type BarChartFilter = "Realtime" | "Daily" | "Weekly" | "Monthly" | "Yearly";
+
+const BarChartComponent = ({ data, filter }: { data: number[]; filter?: BarChartFilter }) => {
 	const mappedData = data
 		.map((val, id) => {
 			return { month: monthsArr[id], total: val };
@@ -33,7 +35,7 @@ const BarChartComponent = ({ data }: { data: number[] }) => {
 					tickLine={false}
 					axisLine={false}
 					tickFormatter={(value) => value.slice(0, 3)}
-					dataKey={"month" || "week" || "day"}
+					dataKey={"month"}
 				/>
 				<YAxis
 					tickLine={false}

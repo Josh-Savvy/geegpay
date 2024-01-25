@@ -1,35 +1,30 @@
 "use client";
+
 import classNames from "classnames";
 import React from "react";
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-interface AreaChartComponentProps<T> {
-	data: T[];
-}
-
-function AreaChartComponent<T>({ data }: AreaChartComponentProps<T>) {
-	const mappedData = [232, 232, 132, 323];
+const AreaChartComponent = ({ data }: { data: number[] }) => {
 	return (
 		<ResponsiveContainer width="100%" height="100%">
-			<BarChart width={100} height={100} data={mappedData}>
-				<XAxis tickFormatter={(value) => value.slice(0, 3)} dataKey={"month" || "week" || "day"} />
-				<YAxis tickFormatter={(value) => (value !== 0 ? value.toFixed(3) : value)} />
-				<CartesianGrid strokeDasharray="5" vertical={false} />
-
-				<Bar
-					className={classNames(
-						"md:dark:hover:opacity-90 md:hover:opacity-90 md:opacity-50 dark:md:opacity-40 duration-300 text-[#34CAA5]",
-					)}
-					radius={[50, 50, 0, 0]}
-					dataKey="total"
-					barSize={30}
-					// fill="currentColor"
-					fill="url(#colorUv)"
-					layout="horizontal"
-				/>
-			</BarChart>
+			<AreaChart
+				width={500}
+				height={400}
+				data={data}
+				margin={{
+					top: 10,
+					right: 30,
+					left: 0,
+					bottom: 0,
+				}}>
+				<CartesianGrid strokeDasharray="3 3" />
+				<XAxis dataKey="name" />
+				<YAxis />
+				<Tooltip />
+				<Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+			</AreaChart>
 		</ResponsiveContainer>
 	);
-}
+};
 
 export default AreaChartComponent;

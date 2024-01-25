@@ -10,7 +10,7 @@ const LatestOrders = () => {
 		<div className="relative flex flex-col gap-2 w-full rounded-xl bg-white dark:bg-[#181818] dark:border-[#B2ABAB] dark:border-opacity-20 border border-[#EDF2F7] p-5 xl:p-3 duration-300">
 			{/* Top Header Section */}
 			<div className="mb-5 flex justify-between items-center w-full">
-				<h1 className="dark:text-white text-lg duration-300">Latest Orders</h1>
+				<h1 className="text-[18px] text-[#26282C] dark:text-white duration-300 font-medium">Latest Orders</h1>
 				<p className="text-[#34CAA5] hover:underline select-none cursor-pointer">See all</p>
 			</div>
 			<TableHead />

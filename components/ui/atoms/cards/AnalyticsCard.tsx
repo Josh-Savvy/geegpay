@@ -16,7 +16,7 @@ const AnalyticsCards = ({ icon, name, percentage, is_money, data }: AnalyticsCar
 	const IconComp = icon && AnalyticsIcons[icon];
 	const value = data.reduce((acc, currentValue) => acc + currentValue, 0);
 	const percentageThreshold = percentage > 40;
-	console.log({ value });
+
 	return (
 		<div className="flex flex-col justify-around gap-2 w-full rounded-xl bg-white dark:bg-[#181818] dark:border-[#B2ABAB] dark:border-opacity-20 border border-[#EDF2F7] md:p-3 p-5 lg:p-5 xl:p-3 duration-300">
 			<div className="flex justify-between items-center">
@@ -24,11 +24,11 @@ const AnalyticsCards = ({ icon, name, percentage, is_money, data }: AnalyticsCar
 					<IconComp />
 				</div>
 				<div className="">
-					<AreaChartComponent<number> data={data} />
+					<AreaChartComponent data={data} />
 				</div>
 			</div>
-			<h1 className="text-[#898989] capitalize dark:text-white duration-300">{name}</h1>
-			<p className="sm:text-xl text-lg dark:text-white">
+			<h1 className="text-[#898989] capitalize dark:text-white duration-300 sm:text-[18px]">{name}</h1>
+			<p className="sm:text-[24px] text-lg text-[#3A3F51] dark:text-white font-medium">
 				{is_money ? "$" + value.toLocaleString() : value.toLocaleString()}
 			</p>
 			{/* Todo: implement dynamic percentage system */}

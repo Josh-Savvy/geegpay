@@ -8,21 +8,21 @@ const TotalAnalytics = () => {
 			icon: "AnalyticsBoxIcon",
 			name: "Total Orders",
 			percentage: 23.5,
-			data: [2931, 2138, 129832, 382232],
+			data: [21, 23, 59, 29],
 		},
 		{
 			icon: "ThreeD_BoxIcon",
 			name: "Total Orders",
 			percentage: 53.5,
-			data: [2931, 2138, 129832, 382232],
+			data: [30, 93, 30, 21],
 		},
-		{ icon: "CartIcon", name: "Total Orders", percentage: 83.5, data: [2931, 2138, 129832, 382232] },
+		{ icon: "CartIcon", name: "Total Orders", percentage: 83.5, data: [1102, 211, 231, 100] },
 		{
 			icon: "CoinIcon",
 			name: "Total Orders",
 			percentage: 23.5,
 			is_money: true,
-			data: [2931, 2138, 129832, 382232],
+			data: [32, 41, 40, 21],
 		},
 	];
 	// allOrdersData

@@ -7,7 +7,7 @@ const TopPlatform = () => {
 	return (
 		<div className="w-full rounded-xl dark:bg-[#181818] bg-white border border-[#EDF2F7] dark:border-[#B2ABAB] dark:border-opacity-50 p-5 xl:p-3 duration-300">
 			<div className="flex items-center justify-between">
-				<h1 className="text-lg dark:text-white">Top Platforms</h1>
+				<h1 className="text-[18px] text-[#26282C] dark:text-white font-medium">Top Platforms</h1>
 				<div className="flex items-center gap-3">
 					<p className="text-[#34CAA5] hover:underline select-none cursor-pointer">See all</p>
 				</div>
